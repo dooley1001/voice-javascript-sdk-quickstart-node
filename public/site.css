@@ -122,3 +122,68 @@ div#volume-indicators > div {
 button:disabled {
   cursor: not-allowed;
 }
+
+.row {
+  margin: 0 auto;
+  width: 280px;
+  clear: both;
+  text-align: center;
+  font-family: 'Exo';
+}
+
+.digit,
+.dig {
+  float: left;
+  padding: 10px 30px;
+  width: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sub {
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.container {
+  background-color: white;
+  width: 320px;
+  padding: 20px;
+  margin: 30px auto;
+  height: 420px;
+  text-align: center;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+#button-call {
+  display: inline-block;
+  background-color: #66bb6a;
+  padding: 4px 30px;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  float: left;
+  cursor: pointer;
+}
+
+.botrow {
+  margin: 0 auto;
+  width: 280px; 
+  clear: both;
+  text-align: center;
+  font-family: 'Exo';
+}
+
+.digit:active,
+.dig:active {
+  background-color: #666666;
+}
+#button-call:hover {
+  background-color: #81c784;
+}
+.dig {
+  float: left;
+  padding: 10px 20px;
+  margin: 10px;
+  width: 30px;
+  cursor: pointer;
+} 

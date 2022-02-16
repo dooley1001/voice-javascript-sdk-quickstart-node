@@ -26,13 +26,41 @@
 
   let device;
   let token;
+  let call;
+  let callStarted=false;
 
   // Event Listeners
 
   callButton.onclick = (e) => {
     e.preventDefault();
+//    callButton.classList.add("hide");
     makeOutgoingCall();
+    console.log(e);
   };
+
+ // Digits button logic for dialpad
+  $(".digit").on('click', function() {
+    var input = document.getElementById("phone-number");
+    var current = input.value;
+    var num = ($(this).clone().children().remove().end().text());
+    input.value = current + num.trim();
+
+    console.log(callStarted);
+    if (callStarted == true) {
+      var dtmf = num.trim();
+      dtmf = dtmf.toString();
+      console.log(dtmf);
+      call.sendDigits(dtmf);
+    }
+  });
+  
+  $('.fa-long-arrow-left').on('click', function() {
+    var input = document.getElementById("phone-number");
+    var current = input.value;
+    var newVal = current.slice(0, -1);
+    input.value = newVal;
+  }); 
+
   getAudioDevicesButton.onclick = getAudioDevices;
   speakerDevices.addEventListener("change", updateOutputDevice);
   ringtoneDevices.addEventListener("change", updateRingtoneDevice);
@@ -51,6 +79,7 @@
       const data = await $.getJSON("/token");
       log("Got a token.");
       token = data.token;
+      console.log("Token: " + token);
       setClientNameUI(data.identity);
       intitializeDevice();
     } catch (err) {
@@ -65,10 +94,13 @@
     logDiv.classList.remove("hide");
     log("Initializing device");
     device = new Twilio.Device(token, {
-      logLevel:1,
+      logLevel:0,
       // Set Opus as our preferred codec. Opus generally performs better, requiring less bandwidth and
       // providing better audio quality in restrained network conditions.
       codecPreferences: ["opus", "pcmu"],
+
+      //allow incoming calls while busy
+      allowIncomingWhileBusy: true,
     });
 
     addDeviceListeners(device);
@@ -99,7 +131,7 @@
     }
   }
 
-  // MAKE AN OUTGOING CALL
+  
 
   async function makeOutgoingCall() {
     var params = {

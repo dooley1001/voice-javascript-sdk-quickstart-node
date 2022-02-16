@@ -7,9 +7,11 @@ const config = require("../config");
 
 var identity;
 
+//This is where a token is generated
 exports.tokenGenerator = function tokenGenerator() {
-  identity = nameGenerator();
-
+  identity = "David"; //hardcode our name for our client 
+                      //we can also use nameGenerator(); to randomly generate a name
+                      
   const accessToken = new AccessToken(
     config.accountSid,
     config.apiKey,
