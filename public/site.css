@@ -69,6 +69,7 @@ input {
   font-family: Helvetica-LightOblique, Helvetica, sans-serif;
   font-style: oblique;
   font-size: 1em;
+  color: #cf9e9e;
   width: 100%;
   height: 2.5em;
   padding: 0;
@@ -103,13 +104,23 @@ div#volume-indicators > div {
 }
 
 .log-entry {
-  color: #686865;
+  color: #6e6e6e;
   font-family: "Share Tech Mono", "Courier New", Courier, fixed-width;
   font-size: 1.25em;
   line-height: 1.25em;
   margin-left: 1em;
   text-indent: -1.25em;
   width: 90%;
+}
+
+#button-hangup-incoming{
+  display: inline-block;
+  background-color: #ec2f0e;
+  padding: 4px 30px;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* Other Styles */
@@ -164,7 +175,16 @@ button:disabled {
   float: left;
   cursor: pointer;
 }
-
+#hangup {
+  display: inline-block;
+  background-color: #ec2f0e;
+  padding: 4px 30px;
+  margin: 10px;
+  color: white;
+  border-radius: 4px;
+  float: left;
+  cursor: pointer;
+}
 .botrow {
   margin: 0 auto;
   width: 280px; 
@@ -175,10 +195,13 @@ button:disabled {
 
 .digit:active,
 .dig:active {
-  background-color: #666666;
+  background-color: #e9e9e9;
 }
 #button-call:hover {
   background-color: #81c784;
+}
+#hangup:hover {
+  background-color: #ec6c55;
 }
 .dig {
   float: left;

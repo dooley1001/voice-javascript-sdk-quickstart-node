@@ -5,7 +5,7 @@
   const inputVolumeBar = document.getElementById("input-volume");
   const volumeIndicators = document.getElementById("volume-indicators");
   const callButton = document.getElementById("button-call");
-  const outgoingCallHangupButton = document.getElementById("button-hangup-outgoing");
+  const outgoingCallHangupButton = document.getElementById("hangup");
   const callControlsDiv = document.getElementById("call-controls");
   const audioSelectionDiv = document.getElementById("output-selection");
   const getAudioDevicesButton = document.getElementById("get-devices");
@@ -32,8 +32,9 @@
   // Event Listeners
 
   callButton.onclick = (e) => {
-    e.preventDefault();
-//    callButton.classList.add("hide");
+    e.preventDefault(); 
+    callButton.classList.add("hide");
+    outgoingCallHangupButton.classList.remove("hide");
     makeOutgoingCall();
     console.log(e);
   };
@@ -167,6 +168,7 @@
     outgoingCallHangupButton.classList.remove("hide");
     volumeIndicators.classList.remove("hide");
     bindVolumeIndicators(call);
+    callStarted=true;
   }
 
   function updateUIDisconnectedOutgoingCall() {
@@ -174,6 +176,7 @@
     callButton.disabled = false;
     outgoingCallHangupButton.classList.add("hide");
     volumeIndicators.classList.add("hide");
+    callStarted=false;
   }
 
   // HANDLE INCOMING CALL
@@ -214,6 +217,7 @@
     incomingCallAcceptButton.classList.add("hide");
     incomingCallRejectButton.classList.add("hide");
     incomingCallHangupButton.classList.remove("hide");
+    callStarted=true; 
   }
 
   // REJECT INCOMING CALL
