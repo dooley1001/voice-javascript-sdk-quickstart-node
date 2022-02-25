@@ -8,6 +8,10 @@
 
 > This template is part of Twilio CodeExchange. If you encounter any issues with this code, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues).
 
+> This version has been updated to include a DTMF UI Dialpad 
+![screenshot of web app home page with dialpad](./screenshots/Dialpad.png)
+
+
 ## About
 
 This application should give you a ready-made starting point for writing your own voice apps with Twilio Voice JavaScript SDK 2.0 (Formerly known as Twilio Client). 
