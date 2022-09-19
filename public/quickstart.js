@@ -26,7 +26,6 @@
 
   let device;
   let token;
-  let call;
   let callStarted=false;
 
   // Event Listeners
