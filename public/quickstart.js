@@ -174,6 +174,7 @@
     log("Call disconnected.");
     callButton.disabled = false;
     outgoingCallHangupButton.classList.add("hide");
+    callButton.classList.remove("hide");
     volumeIndicators.classList.add("hide");
     callStarted=false;
   }
