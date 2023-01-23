@@ -4,6 +4,10 @@
 
 # Twilio Voice JavaScript SDK Quickstart for Node.js
 
+## Disclaimer
+
+This REPO is not maintained by Twilio. Though created by a member of Twilio staff, if you have an issue with this repo, please log an issue/pull request directly. Twilio Support will NOT be able to assist with this repo directly. 
+
 ![](https://github.com/TwilioDevEd/voice-javascript-sdk-quickstart-node/workflows/Node.js/badge.svg)
 
 > This template is part of Twilio CodeExchange. If you encounter any issues with this code, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues).
