@@ -62,7 +62,7 @@ Before we begin local development, we need to collect all the config values we n
 1. First clone this repository and cd into it:
 
    ```bash
-   git clone https://github.com/TwilioDevEd/voice-javascript-sdk-quickstart-node.git
+   git clone https://github.com/dooley1001/voice-javascript-sdk-quickstart-node
    cd voice-javascript-sdk-quickstart-node
    ```
 
