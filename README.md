@@ -1,14 +1,14 @@
-<a href="https://www.twilio.com">
-  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
-</a>
-
 # Twilio Voice JavaScript SDK Quickstart for Node.js
+
+![Twilio](https://img.shields.io/badge/Twilio-F22F46?style=for-the-badge&logo=Twilio&logoColor=white)
+ 
+ 
+ ![](https://img.shields.io/badge/NodeJS-%20%3E=14.x-Green)  ![](https://img.shields.io/badge/Ngrok-latest-blue) ![](https://img.shields.io/badge/Twilio_Voice_SDK-2.10.2-red)
+
 
 ## Disclaimer
 
 This REPO is not maintained by Twilio. Though created by a member of Twilio staff, if you have an issue with this repo, please log an issue/pull request directly. Twilio Support will NOT be able to assist with this repo directly. 
-
-![](https://github.com/TwilioDevEd/voice-javascript-sdk-quickstart-node/workflows/Node.js/badge.svg)
 
 > This template is part of Twilio CodeExchange. If you encounter any issues with this code, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues).
 
