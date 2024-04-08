@@ -5,7 +5,6 @@
  
  ![](https://img.shields.io/badge/NodeJS-%20%3E=14.x-Green)  ![](https://img.shields.io/badge/Ngrok-latest-blue) ![](https://img.shields.io/badge/Twilio_Voice_SDK-2.10.2-red)
 
-
 ## Disclaimer
 
 This REPO is not maintained by Twilio. Though created by a member of Twilio staff, if you have an issue with this repo, please log an issue/pull request directly. Twilio Support will NOT be able to assist with this repo directly. 
@@ -181,6 +180,9 @@ Please be aware that some of these services may charge you for the usage and/or 
 | :-------------------------------- | :---------------------------------------------------------------------------------- |
 | [Heroku](https://www.heroku.com/) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) |
 
+#Repo Downloads
+ [![Github All Releases](https://img.shields.io/github/downloads/dooley1001/voice-javascript-sdk-quickstart-node/total.svg)]()
+
 ## Resources
 
 - The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
@@ -198,3 +200,5 @@ This template is open source and welcomes contributions. All contributions are s
 No warranty expressed or implied. Software is as is.
 
 [twilio]: https://www.twilio.com
+
+
