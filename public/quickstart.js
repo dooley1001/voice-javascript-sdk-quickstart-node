@@ -38,28 +38,43 @@
     console.log(e);
   };
 
- // Digits button logic for dialpad
-  $(".digit").on('click', function() {
-    var input = document.getElementById("phone-number");
-    var current = input.value;
-    var num = ($(this).clone().children().remove().end().text());
-    input.value = current + num.trim();
+  function setupEventListener(call) {
 
-    console.log(callStarted);
-    if (callStarted == true) {
+  //For each element in the NodeList, this code adds a click event listener. listening for the 'click' event. 
+   document.querySelectorAll(".digit").forEach(function(element) {
+
+    //add listener to each element or digit on our dialpad
+    element.addEventListener('click', function() {
+      //Get out input from the phone number field
+      var input = document.getElementById("phone-number");
+      var current = input.value;
+      var num = this.innerText.trim();
+        
+      // Check if the clicked element has a .sub class and extract only digits if it does
+      if (this.querySelector('.sub')) {
+            num = num.replace(/\D/g, ''); // Remove all non-digit characters
+      }
+      // Remove any non-digit characters from the end of the input
+      current = current.replace(/\D*$/, '');
+      // trim any leading or trailing whitespace
+      input.value = current + num.trim();
+
+      //assign to variable and log to console
       var dtmf = num.trim();
-      dtmf = dtmf.toString();
-      console.log(dtmf);
-      call.sendDigits(dtmf);
-    }
-  });
-  
-  $('.fa-long-arrow-left').on('click', function() {
+      console.log("DTMF Entered: " + dtmf);
+
+      //Call our sendDigits function passing in our call object and DTMF digits 
+      sendDigits(call, dtmf);
+
+      });
+   }); 
+  }
+  document.querySelector('.fa-long-arrow-left').addEventListener('click', function() {
     var input = document.getElementById("phone-number");
     var current = input.value;
     var newVal = current.slice(0, -1);
     input.value = newVal;
-  }); 
+  });
 
   getAudioDevicesButton.onclick = getAudioDevices;
   speakerDevices.addEventListener("change", updateOutputDevice);
@@ -103,7 +118,7 @@
       allowIncomingWhileBusy: true,
     });
 
-    addDeviceListeners(device);
+      addDeviceListeners(device);
 
     // Device must be registered in order to receive incoming calls
     device.register();
@@ -130,9 +145,6 @@
       audioSelectionDiv.classList.remove("hide");
     }
   }
-
-  
-
   async function makeOutgoingCall() {
     var params = {
       // get the phone number to call from the DOM
@@ -141,9 +153,11 @@
 
     if (device) {
       log(`Attempting to call ${params.To} ...`);
-
       // Twilio.Device.connect() returns a Call object
       const call = await device.connect({ params });
+      
+      //eventlisteners for Dialpad
+      setupEventListener(call);
 
       // add listeners to the Call
       // "accepted" means the call has finished connecting and the state is now "open"
@@ -160,7 +174,6 @@
       log("Unable to make call.");
     }
   }
-
   function updateUIAcceptedOutgoingCall(call) {
     log("Call in progress ...");
     callButton.disabled = true;
@@ -169,7 +182,6 @@
     bindVolumeIndicators(call);
     callStarted=true;
   }
-
   function updateUIDisconnectedOutgoingCall() {
     log("Call disconnected.");
     callButton.disabled = false;
@@ -243,6 +255,17 @@
     resetIncomingCallUI();
   }
 
+  // HANDLE DTMF 
+  function sendDigits(call, digits) {
+    // Check if call object and digits are provided
+    if (!call || !digits) {
+        console.error("Call object or digits are missing.");
+        return;
+    }
+    // Send digits using the Twilio SDK
+    call.sendDigits(digits);
+    console.log("DTMF sent:" +digits);
+  }
   // MISC USER INTERFACE
 
   // Activity log
