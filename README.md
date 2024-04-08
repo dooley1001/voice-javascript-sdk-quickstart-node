@@ -180,9 +180,6 @@ Please be aware that some of these services may charge you for the usage and/or 
 | :-------------------------------- | :---------------------------------------------------------------------------------- |
 | [Heroku](https://www.heroku.com/) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) |
 
-#Repo Downloads
- [![Github All Releases](https://img.shields.io/github/downloads/dooley1001/voice-javascript-sdk-quickstart-node/total.svg)]()
-
 ## Resources
 
 - The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
