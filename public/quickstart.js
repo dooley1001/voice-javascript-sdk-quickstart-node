@@ -61,6 +61,7 @@
 
       //assign to variable and log to console
       var dtmf = num.trim();
+      log("DTMF Entered: " + dtmf);
       console.log("DTMF Entered: " + dtmf);
 
       //Call our sendDigits function passing in our call object and DTMF digits 

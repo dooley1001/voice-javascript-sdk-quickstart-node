@@ -34,6 +34,7 @@ Implementations in other languages:
 
 - [Nodejs](https://nodejs.org/) version **14.0** or above.
 - [ngrok](https://ngrok.com/download) - this is used to expose your local development server to the internet. For more information, read [this Twilio blog post](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
+- UPDATE: Ngrok now requires you to create an account with them and generate an auth token. 
 - A WebRTC enabled browser (Google Chrome or Mozilla Firefox are recommended). Edge and Internet Explorer will not work for testing.
 
 ### Create a TwiML Application, Purchase a Phone Number, Create an API Key
@@ -104,14 +105,14 @@ Before we begin local development, we need to collect all the config values we n
    ```
 
 8. `ngrok` will assign a unique URL to your tunnel.
-   It might be something like `https://asdf456.ngrok.io`. You will need this to configure your TwiML app in the next step.
+   It might be something like `https://asdf456.ngrok.io`/ `https://c1bd-51-53-227-95.ngrok-free.app`. You will need this to configure your TwiML app in the next step.
 
 9. Configure your TwiML app
 
    - In the Twilio Console, navigate to [Programmable Voice > TwiML > TwiML Apps](https://www.twilio.com/console/voice/twiml/apps)
    - Select the TwiML App you created earlier
    - On your TwiML App's information page, find the 'Voice Configuration' section.
-   - Change the Request URL to your ngrok url with `/voice` appended to the end. (E.g: `https://asdf456.ngrok.io/voice`) **Note:** You **must** use the https URL, otherwise some browsers will block
+   - Change the Request URL to your ngrok url with `/voice` appended to the end. (E.g: `https://asdf456.ngrok-free.app/voice`) **Note:** You **must** use the https URL, otherwise some browsers will block
      microphone access.
    - Click the 'Save' button.
 
